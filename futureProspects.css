@@ -1,0 +1,196 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+}
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    height: 120vh;
+    width:250px;
+    position:absolute;
+    background: transparent;
+    z-index: 1;
+    transition: 0.5s ease;
+    transform:translateX(-250px);
+}
+.container .head{
+    color: #fbfdce;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    background:transparent;
+}
+ol{
+    width: 100%;
+    list-style: none;
+}
+ol li{
+    display: block;
+    width: 100%;
+}
+ol li a{
+    color: #fdfbce;
+    padding: 15px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;   
+    padding-left:40px ;
+}
+ol li:hover a{
+    background: #030303;
+    color: #e6bd07;
+    letter-spacing: 5px;
+}
+input{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+span{
+    position: absolute;
+    right: -45px;
+    top:10px;
+    font-size: 25px;
+    border-radius: 3px;
+    color: #fff;
+    padding: 3px 8px;
+    cursor: pointer;
+    background: #000;
+}
+#bars{
+    background:#f4e2b0;
+    color: #382614;
+}
+#times{
+    background: #f4e2b0;
+    color: #382614;
+}
+#check:checked ~ .container{
+    transform: translateX(0);
+}
+#check:checked ~ .container #bars{
+    display: none;
+}
+.card{
+    position: relative;
+    width: 600px;
+    height: 350px;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card .circle:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    clip-path: circle(150px at center);
+    transition: 0.5s;
+}
+.card:hover .circle:before{
+    background:transparent;
+    clip-path: circle(400px at center);
+}
+.card img{
+    position: absolute;
+    width: 600px;
+    pointer-events: none;
+    transition:transform 0.5s;
+}
+.card:hover img{
+    transform: translateX(-50%);
+}
+.card .content{
+    position: relative;
+    width:100%;
+    transition:opacity 1s;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+}
+.card:hover .content{
+    left: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.content{
+    padding: 20px;
+}
+.title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    padding-left: 0%;
+    transition: 0.5s;
+    color: #f0e181;
+    text-shadow: 0 0 10px #f0e181;
+}
+
+
+
+
+.card:nth-of-type(2):hover img{
+    transform: translateX(50%);
+}
+.card:nth-of-type(2):hover .content{
+    left: -50%;
+    opacity: 1;
+    visibility: visible;
+}
+@media(max-width:768px){
+    .card:hover img{
+        transform: translateY(0%);
+    }
+    .card .content{
+        left: 0%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(50%);
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .card:nth-of-type(2):hover img{
+        transform: translateX(0%);
+    }
+    .card:nth-of-type(2):hover .content{
+        left: 0%;
+        opacity: 1;
+        visibility: visible;
+    }
+   
+}
+@media(max-width:610px){
+    .card{
+        position: relative;
+        width: 300px;
+    }
+    .card img{
+        width: 300px;
+    }
+}

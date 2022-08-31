@@ -1,0 +1,256 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: black;
+}
+.container{
+    height: 120vh;
+    width:250px;
+    position:absolute;
+    background: black;
+    z-index: 1;
+    transition: 0.5s ease;
+    transform:translateX(-250px);
+}
+.container .head{
+    color: #fbfdce;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    background:black;
+}
+ol{
+    width: 100%;
+    list-style: none;
+}
+ol li{
+    display: block;
+    width: 100%;
+}
+ol li a{
+    color: #fdfbce;
+    padding: 15px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;   
+    padding-left:40px ;
+}
+ol li:hover a{
+    background: #030303;
+    color: #e6bd07;
+    letter-spacing: 5px;
+}
+input{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+span{
+    position: absolute;
+    right: -45px;
+    top:10px;
+    font-size: 25px;
+    border-radius: 3px;
+    color: #fff;
+    padding: 3px 8px;
+    cursor: pointer;
+    background: #000;
+}
+#bars{
+    background:#f4e2b0;
+    color: #382614;
+}
+#times{
+    background: #f4e2b0;
+    color: #382614;
+}
+#check:checked ~ .container{
+    transform: translateX(0);
+}
+#check:checked ~ .container #bars{
+    display: none;
+}
+/* 2 */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.slider{
+	position: relative;
+	width: 60%;
+}
+.myslide{
+	height: 500px;
+	display: none;
+	overflow: hidden;
+}
+
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 50px;
+	padding: 15px;
+	cursor: pointer;
+	color: #fff;
+	transition: 0.1s;
+	user-select: none;
+}
+.prev:hover, .next:hover{
+	color: silver; /* blue */
+}
+.next{
+	right: 0;
+}
+
+/* /2 */
+
+/* javascript */
+.active, .dot:hover{
+	border-color: silver; /* blue */
+}
+/* /javascript */
+
+/* muslide add fade */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+/* /muslide add fade */
+
+/* 3 */
+.txt{
+	position: absolute;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 35px;
+	bottom: 0%;
+	left: 30%;
+	-webkit-animation-name: posi;
+  	-webkit-animation-duration: 2s;
+  	animation-name: posi;
+  	animation-duration: 2s;
+	z-index: 1;
+}
+
+@-webkit-keyframes posi {
+  from {left: 35%;}
+  to {left: 30%;}
+}
+
+
+@keyframes posi {
+  from {left: 35%;}
+  to {left: 30%;}
+}
+
+.txt h1{
+	color: silver; /* blue */
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+/* /3 */
+
+/* 4 */
+img{
+	transform: scale(1, 1);
+	-webkit-animation-name: zoomin;
+  	-webkit-animation-duration: 40s;
+  	animation-name: zoomin;
+  	animation-duration: 40s;
+}
+@-webkit-keyframes zoomin {
+  from {transform: scale(0.5, 0.5);}
+  to {transform: scale(1, 1);}
+}
+
+
+@keyframes zoomin {
+  from {transform: scale(0.5, 0.5);}
+  to {transform: scale(1, 1);}
+}
+/* /4 */
+
+
+
+/* 5 */
+@media screen and (max-width: 800px){
+	.myslide{
+		height: 500px;
+	}
+	.txt{
+		letter-spacing: 2px;
+		line-height: 25px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		-webkit-animation-name: posi2;
+		-webkit-animation-duration: 2s;
+		animation-name: posi2;
+		animation-duration: 2s;
+	}
+
+	@-webkit-keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+
+	@keyframes posi2 {
+	  from {top: 35%;}
+	  to {top: 50%;}
+	}
+
+	.txt h1{
+		font-size: 40px;
+	}
+	.txt p{
+		font-size: 13px;
+	}
+	slider{
+		position: relative;
+		width: 100%;
+	}
+	.txt{
+		display: none;
+	}
+
+}
+/* /5 */
+
+/* 6 */
+@media screen and (max-width: 520px){
+	.txt h1{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.sign{
+		margin-right: 20px;
+	}
+	.sign a{
+		font-size: 12px;
+	}
+}
+/* /6 */
